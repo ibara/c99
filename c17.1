@@ -1,0 +1,65 @@
+.\"
+.\" c17 - compile standard C programs
+.\"
+.\" Copyright (c) 2024 Brian Callahan <bcallah@openbsd.org>
+.\"
+.\" Permission to use, copy, modify, and distribute this software for any
+.\" purpose with or without fee is hereby granted, provided that the above
+.\" copyright notice and this permission notice appear in all copies.
+.\"
+.\" THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
+.\" WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+.\" MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
+.\" ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+.\" WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
+.\" ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
+.\" OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+.\"
+.Dd January 13, 2024
+.Dt C17 1
+.Os
+.Sh NAME
+.Nm c17
+.Nd compile standard C programs
+.Sh SYNOPSIS
+.Nm
+.Op Ar options ...
+.Ar pathname
+.Oo
+.Op Ar pathname
+.Op Fl I Ar directory
+.Op Fl L Ar directory
+.Op Fl l Ar library
+.Oc
+.Ar ...
+.Sh DESCRIPTION
+The
+.Nm
+utility compiles standard C programs.
+It is an interface to the system C compiler,
+.Xr cc 1 ,
+with a switch specifying the C standard automatically applied.
+All
+.Ar options
+specifying a different C standard are ignored.
+All other
+.Ar options
+are passed to the C compiler.
+.Pp
+.Nm
+compiles to the
+ISO/IEC 9899:2018 (“ISO C17”)
+standard.
+.Sh EXIT STATUS
+The
+.Nm
+utility exits 0 on success, and >0 if an error occurs.
+.Sh SEE ALSO
+.Xr c11 1 ,
+.Xr c89 1 ,
+.Xr c99 1 ,
+.Xr cc 1
+.Sh AUTHORS
+.Nm
+was written by
+.An Brian Callahan Aq Mt bcallah@openbsd.org .
